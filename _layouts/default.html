@@ -14,13 +14,41 @@
     {% endif %}
     <title>{{ page.title | default: "Dan Bough" }}</title>
     <meta name="description" content="{{ page.description }}" />
+    {% assign page_url = page.url | absolute_url %}
+    <link rel="canonical" href="{{ page_url }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ page.title | default: 'Dan Bough' }}" />
+    <meta property="og:description" content="{{ page.description }}" />
+    <meta property="og:url" content="{{ page_url }}" />
+    <meta property="og:image" content="{{ '/assets/img/dan-bough.png' | absolute_url }}" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic" rel="stylesheet" type="text/css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
     <link rel="stylesheet" href="/assets/css/normalize.min.css" />
     <link rel="stylesheet" href="/assets/css/style.css" />
   </head>
   <body class="{{ page.body_class }}">
     {{ content }}
+    <script>
+      (function () {
+        var els = document.querySelectorAll('.reveal');
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduce || !('IntersectionObserver' in window)) {
+          for (var i = 0; i < els.length; i++) els[i].classList.add('is-visible');
+          return;
+        }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { rootMargin: '0px 0px -10% 0px' });
+        els.forEach(function (el) { io.observe(el); });
+      })();
+    </script>
   </body>
 </html>
