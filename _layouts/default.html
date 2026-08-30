@@ -49,6 +49,27 @@
         }, { rootMargin: '0px 0px -10% 0px' });
         els.forEach(function (el) { io.observe(el); });
       })();
+
+      (function () {
+        var nav = document.querySelector('.site-nav');
+        var toggle = nav && nav.querySelector('.nav-toggle');
+        if (!toggle) return;
+        var panel = nav.querySelector('.site-nav__panel');
+        function setOpen(open) {
+          nav.classList.toggle('is-open', open);
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        }
+        toggle.addEventListener('click', function () {
+          setOpen(!nav.classList.contains('is-open'));
+        });
+        panel.addEventListener('click', function (e) {
+          if (e.target.tagName === 'A') setOpen(false);
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') setOpen(false);
+        });
+      })();
     </script>
   </body>
 </html>
