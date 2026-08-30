@@ -1,0 +1,5 @@
+google_analytics_id: ""
+
+exclude:
+  - CLAUDE.md
+  - README.md
