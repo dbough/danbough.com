@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% if site.google_analytics_id and site.google_analytics_id != "" %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_id }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ site.google_analytics_id }}');
+    </script>
+    {% endif %}
+    <title>{{ page.title | default: "Dan Bough" }}</title>
+    <meta name="description" content="{{ page.description }}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/assets/css/normalize.min.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body class="{{ page.body_class }}">
+    {{ content }}
+  </body>
+</html>
