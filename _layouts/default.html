@@ -27,7 +27,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
     <link rel="stylesheet" href="/assets/css/normalize.min.css" />
-    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/style.css?v={{ site.time | date: '%s' }}" />
   </head>
   <body class="{{ page.body_class }}">
     {{ content }}
