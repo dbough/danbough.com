@@ -181,6 +181,7 @@ body_class: home
                 headers: { Accept: 'application/json' }
             }).then(function (res) {
                 if (res.ok) {
+                    form.reset();
                     form.hidden = true;
                     status.textContent = "Thanks — your message is on its way. I'll get back to you soon.";
                     status.classList.add('is-success');
