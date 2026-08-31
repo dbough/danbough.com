@@ -156,12 +156,22 @@ strong { color: var(--dark); }
     align-items: center;
     gap: 1.5rem;
 }
+.site-header__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+.site-header__logo {
+    display: block;
+    width: 28px;
+    height: 28px;
+}
 .site-header__name {
     font-weight: 800;
     color: var(--dark);
     font-size: 1.05rem;
 }
-.site-header__name:hover { color: var(--dark); }
+.site-header__brand:hover .site-header__name { color: var(--dark); }
 .site-nav {
     margin-left: auto;
     display: flex;
