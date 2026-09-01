@@ -134,6 +134,16 @@ strong { color: var(--dark); }
     transform: translateY(-1px);
     box-shadow: 0 14px 30px rgba(185, 111, 58, 0.28);
 }
+.btn--outline {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #fff;
+}
+.btn--outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+    color: #fff;
+}
 
 /* ---------- Sticky header ---------- */
 
@@ -413,8 +423,27 @@ strong { color: var(--dark); }
 .section--dark .lead,
 .section--dark p { color: rgba(255, 255, 255, 0.82); }
 
+.contact-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    max-width: 34rem;
+    margin: 1.75rem 0 0;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+.contact-divider::before,
+.contact-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
 .contact-form {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     display: grid;
     gap: 1rem;
     max-width: 34rem;
