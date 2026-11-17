@@ -38,8 +38,7 @@ There is intentionally no `Gemfile`.
   sections (`sticky .site-header` → two-column `.hero` (`.hero__text` + framed `.hero__photo`
   with caption, modelled on completelyhumancoaching.com — the `.hero__sub` carries the
   short bio, so there is no separate About section) → `#consulting` with a flex-wrap
-  `.offerings` card grid → `#coaching` (`.two-col` who/what lists) → `#projects` (Simply
-  Productive Software cards) → `#contact` dark Formspree form → `.site-footer`, LinkedIn
+  `.offerings` card grid → `#coaching` (`.two-col` who/what lists) → `#contact` dark Formspree form → `.site-footer`, LinkedIn
   only). Sections alternate `.section` / `.section--alt` bands and carry `.reveal` for the
   scroll fade. Every off-site link is `target="_blank" rel="noopener"`.
 - `404.html` — front matter + a single `.error-page` section. Sets `permalink: /404.html`;
